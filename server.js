@@ -1,4 +1,6 @@
 const bodyparser = require("body-parser");
+const cookieParser = require('cookie-parser')
+
 const express = require('express');
 const app = express();
 const port = 8020;
@@ -10,6 +12,7 @@ db.sequelize.sync({force: true}).then(()=> {
 })*/
 
 app.use(bodyparser.json());
+app.use(cookieParser('MY SECRET'));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -18,6 +21,7 @@ app.use(function(req, res, next) {
 });
 
 require('./apps/routes/customer.route.js')(app);
+require('./apps/routes/auth.route.js')(app);
 
 app.listen(port, err=>{
     if (err) throw err;
