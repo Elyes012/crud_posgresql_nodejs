@@ -1,7 +1,11 @@
-const db = require('../config/db.config.js');
+const db = require('../config/db.config');
 const Customer = db.users;
 const bcrypt = require('bcrypt')
 const BCRYPT_SALT_ROUNDS = 12;
+ 
+
+ 
+
 // Post a Customer
 exports.create = (req, res) => {
 
@@ -16,7 +20,7 @@ exports.create = (req, res) => {
 			// Save to PostgreSQL database + crypt password
 			req.body.password = bcrypt.hashSync(req.body.password, BCRYPT_SALT_ROUNDS);
 			Customer.create(req.body).then(data => {
-
+			
 				// Send created customer to client
 				res.json(data);
 
@@ -44,6 +48,9 @@ exports.create = (req, res) => {
 
 // Find All Customers
 exports.findAll = (req, res) => {
+
+
+ 
 	Customer.findAll().then(customers => {
 		// Send All Customers to Client
 		res.json(customers);
@@ -108,3 +115,5 @@ exports.delete = (req, res) => {
 		});
 	});
 };
+
+

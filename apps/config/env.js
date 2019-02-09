@@ -11,4 +11,5 @@ const env = {
         idle: 10000
     }
 };
+
 module.exports = env;

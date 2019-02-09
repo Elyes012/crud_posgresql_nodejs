@@ -1,10 +1,13 @@
 const db = require('../config/db.config.js');
 const Customer = db.users;
 const bcrypt = require('bcrypt');
-//const passport = require('passport')
-//const LocalStrategy = require('passport-local').Strategy;
+const jwt = require('jsonwebtoken');
+ 
 
-exports.login = (req, res) => {
+
+  
+  exports.login = (req, res) => {
+  
   Customer.findOne({
       where: {
         email: req.body.email
@@ -20,15 +23,17 @@ exports.login = (req, res) => {
             });
           }
           if (result) {
+          /*  console.log('resulttt', user.id);
             res.cookie('user_id', user.id, {
               httpOnly: true,
               secure: true,
               signed: true,
         
-            });
+            });*/
             return res.status(200).json({
               status: 200,
-              success: 'Authentification réussie'
+              success: 'Authentification réussie',
+              userToken :  jwt.sign({data:user.email},'tasmanianDevils')
             });
 
           }

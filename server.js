@@ -1,18 +1,20 @@
 const bodyparser = require("body-parser");
-const cookieParser = require('cookie-parser')
+//const cookieParser = require('cookie-parser')
 
 const express = require('express');
 const app = express();
 const port = 8020;
 
+
+ 
 /*  delete data from database start server
 const db = require('./apps/config/db.config.js');
 db.sequelize.sync({force: true}).then(()=> {
     console.log('Drop and Resync with { force: true }');
 })*/
-
+ 
 app.use(bodyparser.json());
-app.use(cookieParser('MY SECRET'));
+//app.use(cookieParser('MY SECRET'));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
