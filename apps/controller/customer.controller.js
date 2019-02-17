@@ -2,9 +2,8 @@ const db = require('../config/db.config');
 const Customer = db.users;
 const bcrypt = require('bcrypt')
 const BCRYPT_SALT_ROUNDS = 12;
- 
-
- 
+const detailsLogger = require('../config/logger.config').detailsLogger;
+//const confirmationMail = require('../config/verifmail.config');
 
 // Post a Customer
 exports.create = (req, res) => {
@@ -18,22 +17,28 @@ exports.create = (req, res) => {
 		if (!emailUser) {
 
 			// Save to PostgreSQL database + crypt password
-			req.body.password = bcrypt.hashSync(req.body.password, BCRYPT_SALT_ROUNDS);
+			req.body.statut = "Non active";
+			req.body.motPasse = bcrypt.hashSync(req.body.motPasse, BCRYPT_SALT_ROUNDS);
 			Customer.create(req.body).then(data => {
-			
-				// Send created customer to client
+				console.log('dataaa', req.body.email);
+			 
+			 
 				res.json(data);
-
+				detailsLogger.error("votre compte a été créé avec succès  ");
 			}).catch(err => {
 				console.log(err);
 				res.status(500).json({
-					msg: "error",
-					details: err
+					msg: "erreur lors la création du compte",
+					details: err,
+					
 				});
+				detailsLogger.error("erreur lors la création du compte ");
 			});
 
 		} else {
-			res.status(400).send(" Email is already in use!");
+				detailsLogger.error("email existe déjà ");
+			res.status(400).send(" email existe déjà");
+		
 			return;
 		}
 	}).catch(err => {
@@ -42,14 +47,13 @@ exports.create = (req, res) => {
 			msg: "error",
 			details: err
 		});
+		detailsLogger.error("erreur "+ err);
 	});
 
 };
 
 // Find All Customers
 exports.findAll = (req, res) => {
-
-
  
 	Customer.findAll().then(customers => {
 		// Send All Customers to Client

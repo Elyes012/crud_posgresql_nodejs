@@ -2,7 +2,7 @@ const db = require('../config/db.config.js');
 const Customer = db.users;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
- 
+const detailsLogger = require('../config/logger.config').detailsLogger;
 
 
   
@@ -17,27 +17,29 @@ const jwt = require('jsonwebtoken');
       if (user != null) {
         bcrypt.compare(req.body.password, user.password, function (err, result) {
           if (err) {
+            detailsLogger.error("Accès non autorisé"+ err);
             return res.status(401).json({
               status: 401,
               failed: 'Accès non autorisé'
             });
+        
           }
           if (result) {
-          /*  console.log('resulttt', user.id);
+          console.log('user', user.email);
             res.cookie('user_id', user.id, {
               httpOnly: true,
               secure: true,
               signed: true,
         
-            });*/
+            });
             return res.status(200).json({
               status: 200,
               success: 'Authentification réussie',
               userToken :  jwt.sign({data:user.email},'tasmanianDevils')
             });
-
           }
           return res.status(401).json({
+            
             status: 401,
             failed: 'Identifiant ou mot de passe est incorecte'
           });
@@ -55,3 +57,4 @@ const jwt = require('jsonwebtoken');
       });
     });
 };
+

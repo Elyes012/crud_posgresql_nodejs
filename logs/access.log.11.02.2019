@@ -1,0 +1,41 @@
+2019-02-11T10:01:39.120Z - error: email existe déjà 
+2019-02-11T10:03:12.535Z - error: email existe déjà 
+2019-02-11T10:05:38.966Z - error: votre compte a été créé avec succès  
+2019-02-11T10:06:08.750Z - error: votre compte a été créé avec succès  [object SequelizeInstance:userr]
+2019-02-11T10:16:40.533Z - error: erreur Error: data and salt arguments required
+2019-02-11T10:44:16.437Z - error: erreur Error: data and salt arguments required
+2019-02-11T10:45:11.554Z - error: votre compte a été créé avec succès  
+2019-02-11T10:45:32.196Z - error: email existe déjà 
+2019-02-11T11:09:39.231Z - error: votre compte a été créé avec succès  
+2019-02-11T11:11:50.022Z - error: email existe déjà 
+2019-02-11T11:12:41.535Z - error: email existe déjà 
+2019-02-11T13:41:55.965Z - error: votre compte a été créé avec succès  
+2019-02-11T13:44:56.139Z - error: erreur lors la création du compte 
+2019-02-11T13:45:32.069Z - error: email existe déjà 
+2019-02-11T13:45:34.535Z - error: email existe déjà 
+2019-02-11T13:46:19.850Z - error: erreur lors la création du compte 
+2019-02-11T13:46:21.524Z - error: email existe déjà 
+2019-02-11T13:48:03.826Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T13:48:06.946Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T13:48:17.097Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T13:48:25.025Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T13:49:17.214Z - error: erreur SequelizeDatabaseError: la relation « ClientsLivriTns » n'existe pas
+2019-02-11T13:51:41.926Z - error: erreur SequelizeDatabaseError: la relation « ClientsLivriTns » n'existe pas
+2019-02-11T13:53:48.729Z - error: erreur SequelizeDatabaseError: la colonne « Nom » n'existe pas
+2019-02-11T13:54:28.666Z - error: erreur SequelizeDatabaseError: la relation « livriTns » n'existe pas
+2019-02-11T14:00:09.170Z - error: erreur SequelizeDatabaseError: la relation « livriTns » n'existe pas
+2019-02-11T14:01:39.717Z - error: erreur SequelizeDatabaseError: la relation « livriTns » n'existe pas
+2019-02-11T14:01:48.127Z - error: erreur SequelizeDatabaseError: la relation « livriTns » n'existe pas
+2019-02-11T14:02:25.606Z - error: erreur SequelizeDatabaseError: la relation « livriTns » n'existe pas
+2019-02-11T14:06:52.129Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T14:07:46.687Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T14:09:13.483Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T14:10:36.256Z - error: erreur SequelizeDatabaseError: la relation « livriTns » n'existe pas
+2019-02-11T14:12:00.567Z - error: erreur SequelizeDatabaseError: la relation « livriTns » n'existe pas
+2019-02-11T14:13:06.006Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T14:13:15.919Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T14:13:30.603Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T14:17:17.566Z - error: erreur SequelizeConnectionError: la base de donn�es � LivriTn � n'existe pas
+2019-02-11T14:19:36.043Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T14:24:27.220Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas
+2019-02-11T14:25:05.639Z - error: erreur SequelizeDatabaseError: la relation « ClientLivriTns » n'existe pas

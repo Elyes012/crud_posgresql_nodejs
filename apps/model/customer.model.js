@@ -1,23 +1,26 @@
 module.exports = (sequelize, Sequelize) => {
-	// userr --> table in database
-	const Customer = sequelize.define('userr', {
+	// ClientLivriTn --> table in database
+	const Customer = sequelize.define('ClientLivriTn', {
 		id: { 
 			type: Sequelize.INTEGER, 
 			primaryKey: true, 
 			autoIncrement: true 
 		},
-	  firstname: {
+	  nom: {
 			type: Sequelize.STRING
 	  },
-	  lastname: {
+	  prenom: {
 			type: Sequelize.STRING
 		},
 		email: {
 			type: Sequelize.STRING,
 	  },
-	  password: {
+	  motPasse: {
 		  type: Sequelize.STRING
-	  }
+	  },
+	  statut: {
+		type: Sequelize.STRING
+	}
 	});
 	
 	return Customer;
